@@ -55,7 +55,7 @@ object SpatialQuery extends App{
 
   def ST_Within(str1: String, str2: String, dist: Double): Boolean ={
     val values1 = str1.split(",").map(_.trim).map(_.toDouble)
-    val values2 = str2.split(",").map(_.trim)map(_.toDouble)
+    val values2 = str2.split(",").map(_.trim).map(_.toDouble)
     val left = pow(values1(0) - values2(0), 2) + pow(values1(1) - values2(1), 2)
     val right = pow(dist,2)
     return left <= right
